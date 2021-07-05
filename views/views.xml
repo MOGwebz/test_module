@@ -6,13 +6,13 @@
       <field name="name">test_module list</field>
       <field name="model">test_module.test_module</field>
       <field name="arch" type="xml">
-        <tree>
+        <tree editable="top">
           <!-- <field name="name"/>
           <field name="value"/>
           <field name="value2"/> -->
           <field name="field_one" widget="widget_one" options="{'step': 1000}"/>
           <field name="field_two" widget="widget_one" options="{'step': 2000}"/>
-          <field name="field_3" widget="widget_one" options="{'step': 0.25}"/>
+          <field name="field_3" widget="widget_one" />
         </tree>
       </field>
     </record>
@@ -22,7 +22,7 @@
     <record model="ir.actions.act_window" id="test_module.action_window">
       <field name="name">test_module window</field>
       <field name="res_model">test_module.test_module</field>
-      <field name="view_mode">tree,form</field>
+      <field name="view_mode">tree</field>
     </record>
 
 
@@ -48,14 +48,7 @@
 
     <!-- menu categories -->
 
-    <menuitem name="Menu 1" id="test_module.menu_1" parent="test_module.menu_root"/>
-    <menuitem name="Menu 2" id="test_module.menu_2" parent="test_module.menu_root"/>
-
-    <!-- actions -->
-    <menuitem name="List" id="test_module.menu_1_list" parent="test_module.menu_1"
-              action="test_module.action_window"/>
-    <menuitem name="Server to list" id="test_module" parent="test_module.menu_2"
-              action="test_module.action_server"/>
+    <menuitem name="Test Record" id="test_module_menu_1" parent="test_module.menu_root" action="test_module.action_window"/>    
 
   </data>
 </odoo>
