@@ -8,7 +8,7 @@
                     <div class="input-group-prepend">
                         <button class="btn btn-danger btn-minus"> - </button>
                     </div>
-                    <input type="text" class="form-control" t-att-value="formated_value"/>
+                    <input type="text" class="one_input form-control" t-att-value="formated_value"/>
                     <div class="input-group-append">
                         <button class="btn btn-success btn-plus"> + </button>
                     </div>

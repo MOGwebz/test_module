@@ -17,6 +17,7 @@ odoo.define('test_module.widget_one', function (require) {
             events: { // list of event, like jquery event
                 'click .btn-minus': 'btn_minus_action',
                 'click .btn-plus': 'btn_plus_action',
+                'change .one_input': '_onValueChange',
             },
             init: function () {
                 // the 'init' method is called first
@@ -34,6 +35,10 @@ odoo.define('test_module.widget_one', function (require) {
             btn_plus_action: function(){
                 var new_value = this.value + this.step;
                 this._setValue(new_value.toString());
+            },
+            _onValueChange: function (ev) {
+                var val = $(ev.target).val();
+                this._setValue(val);
             },
             _render: function () {
                 // re-render the view if the field value is changed
