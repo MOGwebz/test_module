@@ -46,6 +46,9 @@ odoo.define('test_module.widget_one', function (require) {
                 var formated_value = field_utils.format[this.formatType](this.value);
                 this.$el.html($(qweb.render(this.template, {'widget': this, 'formated_value': formated_value})));
             },
+            isEmpty: function () {
+                return false;
+            },
         });
     
         // register the widget to web.field_registry object
